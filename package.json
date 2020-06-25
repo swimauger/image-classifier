@@ -1,0 +1,34 @@
+{
+  "name": "image-classifier",
+  "version": "1.0.0",
+  "description": "Machine Learning Image Classifier for NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "imgclass": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swimauger/image-classifier.git"
+  },
+  "keywords": [
+    "Image",
+    "Classifier",
+    "Machine",
+    "Learning"
+  ],
+  "author": "Mark Auger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/swimauger/image-classifier/issues"
+  },
+  "homepage": "https://github.com/swimauger/image-classifier#readme",
+  "dependencies": {
+    "@tensorflow-models/knn-classifier": "^1.2.2",
+    "@tensorflow-models/mobilenet": "^2.0.4",
+    "@tensorflow/tfjs": "^2.0.1",
+    "canvas": "^2.6.1"
+  }
+}
