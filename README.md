@@ -8,7 +8,9 @@ Machine Learning Image Classifier for NodeJS
 
 ## Installation
 
-`npm install image-classifier`
+**Library** : `npm install image-classifier`
+
+**CLI** : `npm install -g image-classifier`
 
 <hr>
 
@@ -20,6 +22,9 @@ Machine Learning Image Classifier for NodeJS
 
 ### Machine Learning
 - [**ImageClassifier**](./docs/ImageClassifier.md) : Machine Learning Image Classifier using tensorflow, knnClassifier, and mobilenet.
+
+### Command Line Interface
+- [**train**](./docs/train.md) : Command Line Interface for Image Classifier `(BETA)`
 
 <hr>
 

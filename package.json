@@ -4,10 +4,12 @@
   "description": "Machine Learning Image Classifier for NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "node ./tests/test.js"
+    "test": "npm run test:lib && npm run test:cli",
+    "test:lib": "node ./tests/test.lib.js",
+    "test:cli": "node ./tests/test.cli.js"
   },
   "bin": {
-    "imgclass": "./cli.js"
+    "train": "./cli.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "@tensorflow-models/knn-classifier": "^1.2.2",
     "@tensorflow-models/mobilenet": "^2.0.4",
     "@tensorflow/tfjs": "^2.0.1",
-    "canvas": "^2.6.1"
+    "canvas": "^2.6.1",
+    "download": "^8.0.0"
   }
 }
