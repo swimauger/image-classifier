@@ -19,7 +19,7 @@ Machine Learning Image Classifier for NodeJS
 ### Get Started
 Create a new ImageClassifier with a dataset path for saving and loading your dataset. You can also specify to autosave to save every time you add a new example
 ```JavaScript
-    const { ImageClassifier } = require('image-classifier');
+    const ImageClassifier = require('image-classifier');
 
     const MyClassifier = new ImageClassifier('./mynewdataset.json', true);
 ```
