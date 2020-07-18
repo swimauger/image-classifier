@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ImageClassifier = require('../lib/ImageClassifier');
+const ImageClassifier = require('../ImageClassifier');
 const TestClassifier = new ImageClassifier(path.resolve(__dirname, 'dataset.json'), false);
 
 TestClassifier.load().then(beginTests);

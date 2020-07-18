@@ -59,7 +59,7 @@ class Train {
     }
 
     static async identify([image, dataset]) {
-        const ImageClassifier = require('./lib/ImageClassifier');
+        const ImageClassifier = require('./ImageClassifier');
         const Identifier = new ImageClassifier(dataset, false);
         console.log(await Identifier.predict(image));
     }

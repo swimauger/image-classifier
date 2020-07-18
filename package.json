@@ -1,8 +1,8 @@
 {
   "name": "image-classifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Machine Learning Image Classifier for NodeJS",
-  "main": "index.js",
+  "main": "ImageClassifier.js",
   "scripts": {
     "test": "npm run test:lib && npm run test:cli",
     "test:lib": "node ./tests/test.lib.js",
@@ -31,7 +31,8 @@
     "@tensorflow-models/knn-classifier": "^1.2.2",
     "@tensorflow-models/mobilenet": "^2.0.4",
     "@tensorflow/tfjs": "^2.0.1",
-    "canvas": "^2.6.1",
-    "download": "^8.0.0"
+    "@tensorflow/tfjs-node": "^2.0.1",
+    "download": "^8.0.0",
+    "tensorset": "^1.0.1"
   }
 }
