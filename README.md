@@ -21,7 +21,7 @@ Create a new ImageClassifier with a dataset path for saving and loading your dat
 ```JavaScript
     const ImageClassifier = require('image-classifier');
 
-    const MyClassifier = new ImageClassifier('./mynewdataset.json', true);
+    const MyClassifier = new ImageClassifier('./mynewdataset.json', false);
 ```
 
 | Parameter |                       Description                       |  Type   | Mandatory |
@@ -46,8 +46,8 @@ Add example data for training a new model
 ```JavaScript
     // Add Toyota Exampless
     await MyClassifier.addExample('Toyota', './toyota0.png');
-    await MyClassifier.addExample('Toyota', './toyota0.png');
-    await MyClassifier.addExample('Toyota', './toyota0.png');
+    await MyClassifier.addExample('Toyota', './toyota1.png');
+    await MyClassifier.addExample('Toyota', './toyota2.png');
     /* ...Add more examples */
 
     // Add Honda Examples
