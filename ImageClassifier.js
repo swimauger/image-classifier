@@ -26,7 +26,7 @@ class ImageClassifier {
                 } catch (error) {
                     return;
                 }
-
+                
                 const dataset = await Tensorset.parse(data);
                 this.classifier.setClassifierDataset(dataset);
             }
