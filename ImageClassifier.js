@@ -19,14 +19,14 @@ class ImageClassifier {
             this.mobilenet = await mobilenet.load();
 
             if (fsSync.existsSync(this.dataset)) {
-                const data = await fs.readFile(dataset, { encoding: 'utf-8' });
+                const data = await fs.readFile(this.dataset, { encoding: 'utf-8' });
                 
                 try {
                     if (!data || JSON.stringify(JSON.parse(data)) === '{}') return;
                 } catch (error) {
                     return;
                 }
-                
+
                 const dataset = await Tensorset.parse(data);
                 this.classifier.setClassifierDataset(dataset);
             }
