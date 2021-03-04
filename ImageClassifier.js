@@ -19,16 +19,13 @@ class ImageClassifier {
             this.mobilenet = await mobilenet.load();
 
             if (fsSync.existsSync(this.dataset)) {
-                const data = await fs.readFile(this.dataset, { encoding: 'utf-8' });
-                
                 try {
-                    if (!data || JSON.stringify(JSON.parse(data)) === '{}') return;
+                    const data = await fs.readFile(this.dataset, { encoding: 'utf-8' });
+                    const dataset = await Tensorset.parse(data);
+                    this.classifier.setClassifierDataset(dataset);
                 } catch (error) {
                     return;
                 }
-
-                const dataset = await Tensorset.parse(data);
-                this.classifier.setClassifierDataset(dataset);
             }
         } catch (error) {
             throw error;
@@ -48,7 +45,7 @@ class ImageClassifier {
     async addExample(label, image) {
         try {
             const imgData = await fs.readFile(image);
-            const img = decodeImage(imgData);
+            const img = decodeImage(imgData, 3);
             const tensor = this.mobilenet.infer(img, 'conv_preds');
             this.classifier.addExample(tensor, label);
             if (this.autosave) await this.save();
@@ -65,7 +62,7 @@ class ImageClassifier {
     async predict(image) {
         try {
             const imgData = await fs.readFile(image);
-            const img = decodeImage(imgData);
+            const img = decodeImage(imgData, 3);
             const tensor = this.mobilenet.infer(img, 'conv_preds');
             return this.classifier.predictClass(tensor);
         } catch (error) {
