@@ -1,6 +1,6 @@
 {
   "name": "image-classifier",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Machine Learning Image Classifier for NodeJS",
   "main": "ImageClassifier.js",
   "scripts": {
