@@ -1,6 +1,6 @@
 {
   "name": "image-classifier",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Machine Learning Image Classifier for NodeJS",
   "main": "ImageClassifier.js",
   "scripts": {
@@ -33,6 +33,6 @@
     "@tensorflow/tfjs": "^2.0.1",
     "@tensorflow/tfjs-node": "^2.0.1",
     "download": "^8.0.0",
-    "tensorset": "^1.0.1"
+    "tensorset": "1.0.1"
   }
 }
