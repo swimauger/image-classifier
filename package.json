@@ -1,38 +1,51 @@
 {
   "name": "image-classifier",
-  "version": "1.0.7",
+  "author": "Mark Auger",
+  "version": "1.1.0",
+  "license": "MIT",
   "description": "Machine Learning Image Classifier for NodeJS",
-  "main": "ImageClassifier.js",
+  "main": "lib/ImageClassifier.js",
+  "typings": "lib/ImageClassifier.d.ts",
   "scripts": {
-    "test": "npm run test:lib && npm run test:cli",
-    "test:lib": "node ./tests/test.lib.js",
-    "test:cli": "node ./tests/test.cli.js"
+    "prepublish": "tsc",
+    "build": "tsc && cp -r test/data lib/test && cp -r test/dataset.json lib/test",
+    "test": "jest --silent",
+    "clean": "rm -rf lib"
   },
-  "bin": {
-    "train": "./cli.js"
-  },
+  "files": [
+    "lib/types.d.ts",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+    "lib/**/*.js",
+    "lib/**/*.js.map"
+  ],
+  "keywords": [
+    "Image",
+    "Classifier",
+    "KNN Classifier",
+    "Mobilenet",
+    "Teachable Machine",
+    "Machine",
+    "Learning"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/swimauger/image-classifier.git"
   },
-  "keywords": [
-    "Image",
-    "Classifier",
-    "Machine",
-    "Learning"
-  ],
-  "author": "Mark Auger",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/swimauger/image-classifier/issues"
-  },
+  "bugs": "https://github.com/swimauger/image-classifier/issues",
   "homepage": "https://github.com/swimauger/image-classifier#readme",
   "dependencies": {
     "@tensorflow-models/knn-classifier": "^1.2.2",
     "@tensorflow-models/mobilenet": "^2.0.4",
     "@tensorflow/tfjs": "^2.0.1",
+    "@tensorflow/tfjs-backend-wasm": "^3.3.0",
     "@tensorflow/tfjs-node": "^2.0.1",
-    "download": "^8.0.0",
-    "tensorset": "^1.0.1"
+    "tensorset": "^1.2.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.21",
+    "jest": "^26.6.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+      "declaration": true,
+      "declarationMap": true,
+      "esModuleInterop": true,
+      "module": "commonjs",
+      "skipLibCheck": true,
+      "moduleResolution": "node",
+      "outDir": "lib",
+      "sourceMap": true,
+      "strict": true,
+      "target": "es5",
+      "typeRoots": [ "node_modules/@types" ]
+  },
+  "include": [ "ImageClassifier.ts", "test" ]
+}
