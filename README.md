@@ -1,6 +1,6 @@
 # Image Classifier NodeJS Package
 
-<img align="right" width="275vw" src="https://lh3.ggpht.com/tU-zfWFzbltfzz2A9Qen_7X1tZx3wXCp078X7rgkUOWqQdl567bEZc8v2OEizoDBr0Q=h300">
+<img align="right" width="275vw" src="./camera.png">
 
 ![](https://img.shields.io/npm/dw/image-classifier?color=16697A&style=for-the-badge)
 ![](https://img.shields.io/npm/v/image-classifier?color=DB6400&style=for-the-badge)
@@ -25,7 +25,7 @@ Machine Learning Image Classifier for NodeJS
 
 <br>
 
-## **Creating an instance of ImageClassifier**
+## **Creating an ImageClassifier**
 
 ### ImageClassifier.create()
 #### Create a new instance of `ImageClassifier` from scratch
@@ -94,7 +94,7 @@ const classifier = await ImageClassifier.load('./dataset.json');
 <summary>Example:</summary>
 
 ```javascript
-const classifier = await ImageClassifier.save('./carset.json');
+await classifier.save('./carset.json');
 ```
 </details>
 
