@@ -3,7 +3,7 @@ import * as fsp from "fs/promises";
 import * as mobilenet from "@tensorflow-models/mobilenet";
 import * as knnClassifier from "@tensorflow-models/knn-classifier";
 import Tensorset from "tensorset/lib/Tensorset";
-import { decodeImage } from "@tensorflow/tfjs-node/dist/image";
+import * as tf from "@tensorflow/tfjs-node";
 
 class ImageClassifier {
     static default = ImageClassifier;
@@ -57,7 +57,7 @@ class ImageClassifier {
     async addExample(label: string, image: string | Buffer) {
         try {
             const imageData = image instanceof Buffer ? image : await fsp.readFile(image);
-            const tensor = this.mobilenet.infer(decodeImage(imageData, 3));
+            const tensor = this.mobilenet.infer(tf.node.decodeImage(new Uint8Array(imageData), 3), true);
             this.classifier.addExample(tensor, label);
         } catch (error) {
             // ERROR (Option 1): Failed to read file
@@ -73,7 +73,7 @@ class ImageClassifier {
     async predict(image: string | Buffer) {
         try {
             const imageData = image instanceof Buffer ? image : await fsp.readFile(image);
-            const tensor = this.mobilenet.infer(decodeImage(imageData, 3));
+            const tensor = this.mobilenet.infer(tf.node.decodeImage(new Uint8Array(imageData), 3), true);
             return this.classifier.predictClass(tensor);
         } catch (error) {
             // ERROR (Option 1): Failed to read file
