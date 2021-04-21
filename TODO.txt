@@ -1,0 +1,9 @@
+- Potentially dockerize tests to support Apple M1
+- Add synchronous methods
+- Add Linter
+- Add custom error messages
+- Add automation
+  - Run Tests
+  - Run build & publish
+  - Run Linter
+  - Generate docs (typedoc and typedoc-plugin-markdown = typedoc --theme markdown ImageClassifier.ts)

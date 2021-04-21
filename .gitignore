@@ -1,5 +1,5 @@
-package-lock.json
 node_modules
 .DS_Store
-tests/dataset.json
-datasets
+package-lock.json
+test/dataset.2.json
+lib
