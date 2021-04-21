@@ -17,8 +17,8 @@ describe('image-classifier library tests', () => {
 
   test('image-classifier add example and save', async () => {
     const classifier = await ImageClassifier.load(DATASET_PATH);
-    expect(await classifier.addExample('Dog', path.resolve(__dirname, './data/dog.test/dog.0.jpeg'))).toReturn();
-    expect(await classifier.save(DATASET_PATH2)).toReturn();
+    expect(await classifier.addExample('Dog', path.resolve(__dirname, './data/dog.test/dog.0.jpeg'))).toBe(undefined);
+    expect(await classifier.save(DATASET_PATH2)).toBe(undefined);
   });
 
   test('image-classifier drop classifier and predict', async () => {
